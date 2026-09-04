@@ -1,0 +1,5 @@
+{
+  "schema_name": "work_order.v1",
+  "version": "1",
+  "frozen_fields": ["note", "schema_name", "schema_version", "seq", "target", "task_kind", "timestamp"]
+}

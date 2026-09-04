@@ -1,0 +1,45 @@
+{
+  "description": "Golden vectors for the canonical encoding. Each case pairs an input (a parsed JSON object) with the exact canonical bytes (hex-encoded) the encoder must produce. The hex is authored by hand against RFC 8259, independent of the Python implementation, so a stranger in another language can verify byte-compatibility without reading this code. Floats are not permitted (see schema/README.md), so no float case appears.",
+  "cases": [
+    {
+      "name": "sorted keys compact",
+      "input": {"b": 2, "a": 1},
+      "canonical_hex": "7b2261223a312c2262223a327d"
+    },
+    {
+      "name": "nested compact",
+      "input": {"z": {"y": 1, "x": [true, null]}},
+      "canonical_hex": "7b227a223a7b2278223a5b747275652c6e756c6c5d2c2279223a317d7d"
+    },
+    {
+      "name": "control short forms (LF, TAB)",
+      "input": {"s": "A\nB\tC"},
+      "canonical_hex": "7b2273223a22415c6e425c7443227d"
+    },
+    {
+      "name": "control char without short form (SOH)",
+      "input": {"s": "A\u0001B"},
+      "canonical_hex": "7b2273223a22415c753030303142227d"
+    },
+    {
+      "name": "astral char surrogate pair",
+      "input": {"s": "\ud83d\ude80"},
+      "canonical_hex": "7b2273223a225c75643833645c7564653830227d"
+    },
+    {
+      "name": "non-ascii key ordering by code point",
+      "input": {"\u00e9": 1, "e": 2, "z": 3},
+      "canonical_hex": "7b2265223a322c227a223a332c225c7530306539223a317d"
+    },
+    {
+      "name": "quote and backslash escapes",
+      "input": {"s": "a\"b\\c"},
+      "canonical_hex": "7b2273223a22615c22625c5c63227d"
+    },
+    {
+      "name": "integer at 2**53 boundary",
+      "input": {"n": 9007199254740992},
+      "canonical_hex": "7b226e223a393030373139393235343734303939327d"
+    }
+  ]
+}

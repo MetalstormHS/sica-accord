@@ -1,0 +1,9 @@
+{
+  "schema_name": "claim.v1",
+  "schema_version": "1",
+  "seq": 3,
+  "resource": "workstation-09",
+  "claimant": "specialist",
+  "intent": "probe",
+  "timestamp": "2026-09-29T19:43:00+08:00"
+}
