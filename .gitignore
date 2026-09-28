@@ -10,3 +10,6 @@ venv/
 # Test / tool caches
 .pytest_cache/
 .coverage
+
+# Internal build artifacts (never public)
+ARCHITECT_REPORT_*.txt
