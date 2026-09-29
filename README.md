@@ -56,7 +56,7 @@ it acts, so it only ever acts on a card that actually validates.
 Prerequisites: Python 3.11 or later.
 
 ```sh
-git clone <this repository>
+git clone https://github.com/MetalstormHS/sica-accord.git
 cd sica-accord
 python3 -m pip install cryptography
 python3 demo/run_demo.py
@@ -119,3 +119,7 @@ is the agreement, not the machinery that acts on it.
 
 See CONTRIBUTING.md. In short: propose a schema or validator change in an
 issue first, then open a pull request.
+
+## License
+
+Apache-2.0 — see [LICENSE](LICENSE).
